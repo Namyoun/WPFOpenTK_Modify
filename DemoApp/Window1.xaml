@@ -1,0 +1,190 @@
+﻿<Window x:Class="DemoApp.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:WPFOpenTK="clr-namespace:WPFOpenTK;assembly=WPFOpenTK"  xmlns:OpenGL="clr-namespace:OpenGL;assembly=WPFOpenTK"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    Width="870" Height="700" x:Name="window" Background="#FF1E1E1E" Loaded="window_Loaded" MouseWheel="window_MouseWheel">
+    <Window.Resources>
+    	<ResourceDictionary>
+    		<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WPFOpenTK;Component/Themes/ExpanderTemplate.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPFOpenTK;Component/Themes/ExpressionDark/Theme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+    		<!-- Converters -->
+    		<WPFOpenTK:DebugConverter x:Key="DebugConverter"/>
+    		<WPFOpenTK:VisibilityConverter x:Key="VisibilityConverter"/>
+    		<WPFOpenTK:FPSConverter x:Key="FPSConverter"/>
+    		<WPFOpenTK:Vector3Converter x:Key="Vector3Converter"/>
+    		<WPFOpenTK:Point3DConverter x:Key="Point3DConverter"/>
+            
+            <!-- Data Stuff -->
+            <OpenGL:TransformGL x:Key="TransformOuter" LocationDP="0,0,-4" RotationDP="0,0,0"/>
+
+            <!-- Colors and Styles -->
+    		<Color x:Key="colorBackground">#FF323232</Color>
+    		<Style x:Key="BorderStyle1" TargetType="{x:Type Border}" >
+    			<Setter Property="CornerRadius" Value="10"/>
+    			<Setter Property="Background">
+    				<Setter.Value>
+    					<SolidColorBrush Color="{StaticResource colorBackground}"/>
+    				</Setter.Value>
+    			</Setter>
+    			<Setter Property="ClipToBounds" Value="True"/>
+    		</Style>
+    		<Storyboard x:Key="storyScreenshotTaken" AutoReverse="True">
+    			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="btnScreenshot" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+    				<SplineDoubleKeyFrame KeyTime="00:00:00.7000000" Value="1.1" KeySpline="0.5,0,0,1"/>
+    			</DoubleAnimationUsingKeyFrames>
+    			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="btnScreenshot" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+    				<SplineDoubleKeyFrame KeyTime="00:00:00.7000000" Value="1.5" KeySpline="0.5,0,0,1"/>
+    			</DoubleAnimationUsingKeyFrames>
+    			<ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="btnScreenshot" Storyboard.TargetProperty="(ContentControl.Content)">
+    				<DiscreteObjectKeyFrame KeyTime="00:00:00.0100000" Value="Saved"/>
+    			</ObjectAnimationUsingKeyFrames>
+    		</Storyboard>
+    		<GridLength x:Key="LabelSpacing">4</GridLength>
+    		<TransformGroup x:Key="NormalTransform">
+    			<ScaleTransform ScaleX="1" ScaleY="1"/>
+    			<SkewTransform AngleX="0" AngleY="0"/>
+    			<RotateTransform Angle="0"/>
+    			<TranslateTransform X="0" Y="0"/>
+    		</TransformGroup>
+    		<TransformGroup x:Key="InvisibleTransform">
+    			<ScaleTransform ScaleX="1" ScaleY="1"/>
+    			<SkewTransform AngleX="0" AngleY="0"/>
+    			<RotateTransform Angle="0"/>
+    			<TranslateTransform X="0" Y="0"/>
+    		</TransformGroup>
+    		<SolidColorBrush x:Key="SliderLabelBrush" Color="#FF1A1A1A"/>
+    	</ResourceDictionary>
+    </Window.Resources>
+    <Window.Title>
+    	<Binding Path="FramesPerSecond" Converter="{StaticResource FPSConverter}" ElementName="GLElement1"/>
+    </Window.Title>
+    
+	<DockPanel>
+		<Border Style="{DynamicResource BorderStyle1}" Margin="8,8,0,8" Width="200" x:Name="brdrControls" LayoutTransform="{DynamicResource NormalTransform}">
+			<StackPanel>
+				<StackPanel.Resources>
+					<Style  TargetType="{x:Type StackPanel}">
+						<Setter Property="Control.Foreground" Value="{StaticResource TextBrush}">
+							<!--<Setter.Value>
+								<SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlTextColorKey}}"/>
+								<SolidColorBrush Color="{StaticResource PanelTextColor}"/>
+							</Setter.Value>-->
+						</Setter>
+					</Style>
+				</StackPanel.Resources>
+				<TextBlock Text="Properties" Style="{DynamicResource PanelTitleStyle}" Foreground="{DynamicResource PanelTextColor}" Margin="4,4,4,0" FontSize="14"/>
+				<Expander Header="View" Margin="4,4,4,4" IsExpanded="True" Template="{DynamicResource ExpanderControlTemplate1}" Style="{DynamicResource ExpanderStyle2}">
+					<StackPanel Margin="4,4,4,4">
+						<CheckBox IsChecked="{Binding Path=PerspectiveProjection, ElementName=GLElement1}" Content="Perpsective" Margin="2,0,0,0" ToolTip="Enable a perspective projection (instead of an orthographic projection)" />
+						<Button Content="Screenshot" x:Name="btnScreenshot" Click="btnScreenshot_Click" RenderTransformOrigin="0.5,0.5" Margin="0,4,0,0">
+							<Button.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform ScaleX="1" ScaleY="1"/>
+									<SkewTransform AngleX="0" AngleY="0"/>
+									<RotateTransform Angle="0"/>
+									<TranslateTransform X="0" Y="0"/>
+								</TransformGroup>
+							</Button.RenderTransform>
+						</Button>
+					</StackPanel>
+				</Expander>
+				<Expander Header="Render" Margin="4,0,4,4" IsExpanded="True" Template="{DynamicResource ExpanderControlTemplate1}" Style="{DynamicResource ExpanderStyle2}">
+					<StackPanel Margin="4,4,4,4">
+						<CheckBox x:Name="chkSFM" Content="Point Lists" Margin="0,0,0,4" IsChecked="True" ToolTip="This demo shows the use of DisplayLists to quickly render many vertices. It also demonstrates the utility of a small vertex shader."/>
+						<CheckBox x:Name="chkPatternCube" Content="Patterned Cube" Margin="0,0,0,4" ToolTip="Shows a simple cube passed through a fragment shader"/>
+						<CheckBox x:Name="chkTexturedCube" Content="Textured Cube" Margin="0,0,0,4" ToolTip="Shows a cube with a generated texture"/>
+						<CheckBox x:Name="chkTexturedPlane" Content="Textured Plane" Margin="0,0,0,4" ToolTip="Shows a plane whose texture is loaded from a file"/>
+						<CheckBox x:Name="chkMouseControl" Content="Mouse Control" Margin="0,0,0,4" ToolTip="Demonstrates using mouse control"/>
+					</StackPanel>
+				</Expander>
+				<Expander Header="Wripple" IsExpanded="True" Template="{DynamicResource ExpanderControlTemplate1}" Style="{DynamicResource ExpanderStyle2}" Visibility="{Binding Path=IsChecked, Converter={StaticResource VisibilityConverter}, ElementName=chkSFM, Mode=Default}" Margin="4,0,4,4">
+					<StackPanel Margin="4,4,4,1">
+						<Grid Margin="0,0,0,3">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="0.4*"/>
+								<ColumnDefinition Width="{DynamicResource LabelSpacing}"/>
+								<ColumnDefinition Width="0.6*"/>
+							</Grid.ColumnDefinitions>
+							<TextBlock Text="Frequency" HorizontalAlignment="Right"/>
+							<WPFOpenTK:EditSlider Maximum="6" DecimalCount="2" Grid.Column="2" Step="0.01" Value="{Binding Path=WrippleShaderProgram.Frequency, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=3}"/>
+						</Grid>
+						<Grid Margin="0,0,0,3">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="0.4*"/>
+								<ColumnDefinition Width="{DynamicResource LabelSpacing}"/>
+								<ColumnDefinition Width="0.6*"/>
+							</Grid.ColumnDefinitions>
+							<TextBlock Text="Scale" HorizontalAlignment="Right"/>
+							<WPFOpenTK:EditSlider Maximum="0.5" DecimalCount="2" Grid.Column="2" Step="0.01" Value="{Binding Path=WrippleShaderProgram.Scale, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=0.3}"/>
+						</Grid>
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="0.4*"/>
+								<ColumnDefinition Width="{DynamicResource LabelSpacing}"/>
+								<ColumnDefinition Width="0.6*"/>
+							</Grid.ColumnDefinitions>
+							<TextBlock Text="Speed" HorizontalAlignment="Right"/>
+							<WPFOpenTK:EditSlider Maximum="0.2" DecimalCount="2" Grid.Column="2" Step="0.01" Value="{Binding Path=WrippleShaderProgram.Speed, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=0.05}"/>
+						</Grid>
+					</StackPanel>
+				</Expander>
+				<Expander Header="Pattern" IsExpanded="True" Template="{DynamicResource ExpanderControlTemplate1}" Style="{DynamicResource ExpanderStyle2}" Visibility="{Binding Path=IsChecked, Converter={StaticResource VisibilityConverter}, ElementName=chkPatternCube, Mode=Default}" Margin="4,0,4,4">
+					<StackPanel Margin="4,4,4,1">
+						<Grid Margin="0,0,0,3">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="0.4*"/>
+								<ColumnDefinition Width="{DynamicResource LabelSpacing}"/>
+								<ColumnDefinition Width="0.6*"/>
+							</Grid.ColumnDefinitions>
+							<TextBlock Text="Pattern" HorizontalAlignment="Right"/>
+							<WPFOpenTK:EditSlider Maximum="5" DecimalCount="0" Grid.Column="2" Step="1" Value="{Binding Path=PatternShaderProgram.Pattern, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=3}"/>
+						</Grid>
+					</StackPanel>
+				</Expander>
+				<Expander Header="Lighting" IsExpanded="True" Template="{DynamicResource ExpanderControlTemplate1}" Style="{DynamicResource ExpanderStyle2}" Visibility="{Binding Path=IsChecked, Converter={StaticResource VisibilityConverter}, ElementName=chkTexturedCube, Mode=Default}" Margin="4,0,4,4">
+					<StackPanel Margin="4,4,4,4">
+						<CheckBox x:Name="chkLightCubes" Content="Use Lighting" />
+					</StackPanel>
+				</Expander>
+				<Expander Header="Transform" Margin="4,0,4,4" IsExpanded="True" Template="{DynamicResource ExpanderControlTemplate1}" Style="{DynamicResource ExpanderStyle2}">
+					<StackPanel Margin="4,4,4,4">
+                        <WPFOpenTK:Edit3D x:Name="RotationEdit" Caption="Rotation" Maximum="360" Minimum="0" LargeChange="15" SmallChange="1"
+                            Value="{Binding Path=TransformInner.RotationDP, ElementName=GLElement1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,0" DecimalCount="0"
+                        />
+                        <WPFOpenTK:Edit3D x:Name="LocationEdit" Caption="Location" Maximum="4" Minimum="-4" LargeChange="1" SmallChange=".1" Margin="0,8,0,0"
+                            Value="{Binding Path=TransformInner.LocationDP, ElementName=GLElement1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DecimalCount="1"
+                        />
+                        <WPFOpenTK:Edit3D x:Name="ScaleEdit" Caption="Scale" Maximum="4" Minimum="0" LargeChange="1" SmallChange=".1" Margin="0,8,0,0"
+                        	Value="{Binding Path=TransformInner.ScaleDP, ElementName=GLElement1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DecimalCount="1"
+                        />
+                    </StackPanel>
+				</Expander>
+				<Expander Header="Frame Buffer" Margin="4,0,4,4" IsExpanded="True" Template="{DynamicResource ExpanderControlTemplate1}" Style="{DynamicResource ExpanderStyle2}">
+					<StackPanel Margin="4,4,4,4">
+						<CheckBox x:Name="chkFBO" Content="Use Framebuffer" IsChecked="{Binding Path=UseFrameBuffer, ElementName=window}" Margin="0,0,0,0" ToolTip="Render to an offscreen buffer and use it as a texture in a scene. The left cube uses shader lighting, and the right cube uses a normal texture."/>
+						<WPFOpenTK:Edit3D x:Name="FBORotation" Caption="Rotation" Maximum="90" Minimum="-90" LargeChange="15" SmallChange="1" Margin="0,8,0,0"
+                            Visibility="{Binding Path=IsChecked, Converter={StaticResource VisibilityConverter}, ElementName=chkFBO, Mode=OneWay}" 
+                            Value="{Binding Path=RotationDP, Source={StaticResource TransformOuter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <!--Value="{Binding Path=TransformOuter.RotationDP, ElementName=Window1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
+					</StackPanel>
+				</Expander>
+            </StackPanel>
+		</Border>
+		<Border x:Name="borderGL" Margin="8,8,8,8" Style="{DynamicResource BorderStyle1}">
+			<Border.Background>
+				<SolidColorBrush Color="{Binding Path=ClearColor, ElementName=GLElement1, Mode=Default}"/>
+			</Border.Background>
+			<WPFOpenTK:GLElement x:Name="GLElement1" ClearColor="{DynamicResource colorBackground}" Cursor="Hand" Margin="2" IsTimerEnabled="True" 
+				GLInitialized="GLElement_GLInitialized" 
+				GLRenderStarted="GLElement_GLRenderStarted" 
+				SizeChanged="GLElement_SizeChanged" >
+				<WPFOpenTK:GLElement.TransformInner>
+                    <OpenGL:TransformGL LocationDP="0,0,-4" ScaleDP="1.6,1.6,1.6" />
+                </WPFOpenTK:GLElement.TransformInner>
+			</WPFOpenTK:GLElement>
+		</Border>
+	</DockPanel>
+</Window>

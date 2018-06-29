@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="WPFOpenTK.Edit3D" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gARgAICAEAQAECgQYAgQIEADgEAACAAACACgAACAcAE=</HashCode>
+      <FileName>Controls\Edit3D.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WPFOpenTK.EditSlider" Collapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oCAAiACEYQTBAAQHIAgQAgEEEFFQAgEApABgEBCAAAg=</HashCode>
+      <FileName>Controls\EditSlider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFOpenTK.DebugConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\DebugConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WPFOpenTK.FPSConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\FPSConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WPFOpenTK.NumberConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\NumberConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WPFOpenTK.Point3DConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\Point3DConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WPFOpenTK.Point3DMultiConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\Point3DConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WPFOpenTK.Vector3Converter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\Vector3Converter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WPFOpenTK.VisibilityConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\VisibleConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WPFOpenTK.GLElement" Collapsed="true">
+    <Position X="7.75" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>Do8BACAAAFAIZyIGQGgwBIBEAMsAZIgYCBgghQAOAgM=</HashCode>
+      <FileName>GLElement.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TransformInner" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OpenGL.DisplayList" Collapsed="true">
+    <Position X="9" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>DisplayList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenGL.EditableBitmap" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAACAATAAgAAACAkAAAgIAAAAgQAAAAEABAACAAQ=</HashCode>
+      <FileName>EditableBitmap.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OpenGL.SharedPinnedByteArray" Collapsed="true">
+    <Position X="15.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAEAAAAAAAAEAAAAAAAAAAABAAAAAAAICgAAAAAA=</HashCode>
+      <FileName>EditableBitmap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenGL.FrameBuffer" Collapsed="true">
+    <Position X="2.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAABABABUBAAAAABEQAIgBAAgAAEgIAAAEAAAA=</HashCode>
+      <FileName>FrameBuffer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Texture" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OpenGL.GLDraw" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GLDraw.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OpenGL.GLHelpers" Collapsed="true">
+    <Position X="15.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAIAAAAgAAAAAAQCAAQAIAAAAAAEAAgAAAIggAAgACA=</HashCode>
+      <FileName>GLHelpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenGL.GraphicsResource" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAACAAAAAAAAAAAAAAAAAAAAAAAAEAAACBAAA=</HashCode>
+      <FileName>GraphicsResource.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OpenGL.ShaderProgram" Collapsed="true">
+    <Position X="11.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAAAAAAEAAAABAAAAAAAABAgABAYAACAEIAgAQAAA=</HashCode>
+      <FileName>Shader.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="VertexShader" />
+      <Property Name="FragmentShader" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OpenGL.Shader" Collapsed="true">
+    <Position X="11.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgCAAAEAAAAAgAAAAAAAAAAAAAAAAAAAAEAE=</HashCode>
+      <FileName>Shader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OpenGL.VertexShader" Collapsed="true">
+    <Position X="9.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Shader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenGL.GeometryShader" Collapsed="true">
+    <Position X="11.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Shader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenGL.FragmentShader" Collapsed="true">
+    <Position X="14" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Shader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenGL.Texture">
+    <Position X="5.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAgAAAAABAAQEAAAAAAAEAAAEAAAAAAAAEABAgBCA=</HashCode>
+      <FileName>Texture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenGL.Texture2D" Collapsed="true">
+    <Position X="3.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAgAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAIABAAAAA=</HashCode>
+      <FileName>Texture.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="imageMipMapped" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="OpenGL.Texture3D" Collapsed="true">
+    <Position X="6" Y="10.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>CCAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAABAEAAQ=</HashCode>
+      <FileName>Texture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenGL.TransformGL" Collapsed="true">
+    <Position X="11" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAABCAAKIAAAIABAAAgAEAAAAAAAAAAgQAQAI=</HashCode>
+      <FileName>Transform.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenGL.Geometry.Geometry" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Geometry\Geometry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenGL.Geometry.PointSet" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAICEAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Geometry\PointSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenGL.Geometry.Cylinder" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Geometry\PointSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenGL.Geometry.Sphere" Collapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Geometry\PointSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenGL.Geometry.Box" Collapsed="true">
+    <Position X="5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Geometry\PointSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Helpers" Collapsed="true">
+    <Position X="17.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAQEAAAAAAAAAAQAAAAAAACAAAAAA=</HashCode>
+      <FileName>Helpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFOpenTK.Properties.Resources" Collapsed="true">
+    <Position X="17.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPFOpenTK.Properties.Settings" Collapsed="true">
+    <Position X="19.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenGL.ShaderPropertyAttribute" Collapsed="true">
+    <Position X="14" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="OpenTK.Math.Vector2i" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAMAIAABARAAAhgs8AcA4ABBCQAAAIAAgAAgAAAAYqQ=</HashCode>
+      <FileName>Future OpenTK Classes\Vector2i.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

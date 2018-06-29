@@ -1,0 +1,82 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:WPFOpenTK"
+	mc:Ignorable="d"
+	x:Class="WPFOpenTK.Edit3D"
+	x:Name="UserControl" d:DesignHeight="120" d:DesignWidth="100">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<!--<ResourceDictionary Source="..\Themes\Generic.xaml"/>-->
+			</ResourceDictionary.MergedDictionaries>
+			<local:DebugConverter x:Key="DebugConverter"/>
+			<Storyboard x:Key="OnbtnResetClick" FillBehavior="Stop">
+				<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="UserControl" Storyboard.TargetProperty="(local:Edit3D.X)">
+					<SplineDoubleKeyFrame KeyTime="00:00:04" Value="0.0" KeySpline="0.25,0,0.75,1"/>
+				</DoubleAnimationUsingKeyFrames>
+				<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="UserControl" Storyboard.TargetProperty="(local:Edit3D.Y)">
+					<SplineDoubleKeyFrame KeyTime="00:00:04" Value="0.0" KeySpline="0.25,0,0.75,1"/>
+				</DoubleAnimationUsingKeyFrames>
+				<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="UserControl" Storyboard.TargetProperty="(local:Edit3D.Z)">
+					<SplineDoubleKeyFrame KeyTime="00:00:04" Value="0.0" KeySpline="0.25,0,0.75,1"/>
+				</DoubleAnimationUsingKeyFrames>
+			</Storyboard>
+			<SolidColorBrush x:Key="SliderLabelBrush" Color="#FF1A1A1A"/>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<UserControl.Triggers>
+		<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btnReset">
+			<BeginStoryboard Storyboard="{StaticResource OnbtnResetClick}" x:Name="OnbtnResetClick_BeginStoryboard"/>
+		</EventTrigger>
+	</UserControl.Triggers>
+    
+	<StackPanel x:Name="LayoutRoot">
+		<DockPanel LastChildFill="False" Margin="0,0,0,2">
+			<TextBlock x:Name="txtCaption" Text="Edit3D" />
+			<Button Content="Reset" DockPanel.Dock="Right" Padding="1,0,1,0" FontSize="9" VerticalAlignment="Center" x:Name="btnReset" Margin="8,0,0,0" ToolTip="Reset all values to 0" />
+		</DockPanel>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.33*"/>
+				<ColumnDefinition Width="0.33*"/>
+				<ColumnDefinition Width="0.33*"/>
+			</Grid.ColumnDefinitions>
+			<Border Grid.Column="0" Margin="2,0,2,0" CornerRadius="5,5,5,5" Background="{DynamicResource SliderLabelBrush}">
+				<DockPanel>
+					<TextBlock Text="X" VerticalAlignment="Center" Foreground="#FFFFFFFF" Margin="2,0,1,0"/>
+					<local:EditSlider BorderBrush="{DynamicResource SliderLabelBrush}"
+						Value="{Binding Path=X, ElementName=UserControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+						Minimum="{Binding Path=Minimum, ElementName=UserControl, Mode=Default}" 
+						Maximum="{Binding Path=Maximum, ElementName=UserControl, Mode=Default}"
+						Step="{Binding Path=SmallChange, ElementName=UserControl, Mode=Default}" DecimalCount="{Binding Path=DecimalCount, ElementName=UserControl, Mode=Default}"
+					/>
+				</DockPanel>
+			</Border>
+			<Border Grid.Column="1" Margin="2,0,2,0" CornerRadius="5,5,5,5" Background="{DynamicResource SliderLabelBrush}">
+				<DockPanel>
+					<TextBlock Text="Y" VerticalAlignment="Center" Foreground="#FFFFFFFF" Margin="2,0,1,0"/>
+					<local:EditSlider BorderBrush="{DynamicResource SliderLabelBrush}"
+						Value="{Binding Path=Y, ElementName=UserControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+						Minimum="{Binding Path=Minimum, ElementName=UserControl, Mode=Default}" 
+						Maximum="{Binding Path=Maximum, ElementName=UserControl, Mode=Default}"
+						Step="{Binding Path=SmallChange, ElementName=UserControl, Mode=Default}" DecimalCount="{Binding Path=DecimalCount, ElementName=UserControl, Mode=Default}"
+					/>
+				</DockPanel>
+			</Border>
+			<Border Grid.Column="2" Margin="2,0,2,0" CornerRadius="5,5,5,5" Background="{DynamicResource SliderLabelBrush}">
+				<DockPanel>
+					<TextBlock Text="Z" VerticalAlignment="Center" Foreground="#FFFFFFFF" Margin="2,0,1,0"/>
+					<local:EditSlider BorderBrush="{DynamicResource SliderLabelBrush}"
+						Value="{Binding Path=Z, ElementName=UserControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+						Minimum="{Binding Path=Minimum, ElementName=UserControl, Mode=Default}" 
+						Maximum="{Binding Path=Maximum, ElementName=UserControl, Mode=Default}"
+						Step="{Binding Path=SmallChange, ElementName=UserControl, Mode=Default}" DecimalCount="{Binding Path=DecimalCount, ElementName=UserControl, Mode=Default}"
+					/>
+				</DockPanel>
+			</Border>
+		</Grid>
+	</StackPanel>
+</UserControl>

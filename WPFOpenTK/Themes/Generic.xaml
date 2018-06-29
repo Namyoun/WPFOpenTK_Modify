@@ -1,0 +1,11 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:WPFOpenTK">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/WPFOpenTK;component/Controls/EditSlider.xaml"/>
+        <!--<ResourceDictionary Source="/WPFOpenTK;component/Themes/ExpressionDark/Theme.xaml"/>-->
+    </ResourceDictionary.MergedDictionaries>
+    
+</ResourceDictionary>

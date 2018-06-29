@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="DemoApp.LightingShaderProgram" Collapsed="true">
+    <Position X="0.5" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAACABQCAAAAUBEBAAAAAAAAAAAAAAAAAiIAACAAAA=</HashCode>
+      <FileName>Shaders\LightingShaderProgram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DemoApp.PatternShaderProgram" Collapsed="true">
+    <Position X="2.75" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQBAIAAAAAAQAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Shaders\PatternShaderProgram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DemoApp.WrippleShaderProgram" Collapsed="true">
+    <Position X="5" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQBAgAIAAAABQIAAACAAACAAgACABAA=</HashCode>
+      <FileName>Shaders\WrippleShaderProgram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OpenGL.ShaderProgram" Collapsed="true">
+    <Position X="0.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="VertexShader" />
+      <Property Name="FragmentShader" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OpenGL.Shader" Collapsed="true">
+    <Position X="5.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OpenGL.VertexShader" Collapsed="true">
+    <Position X="3.5" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="OpenGL.GeometryShader" Collapsed="true">
+    <Position X="5.75" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="OpenGL.FragmentShader" Collapsed="true">
+    <Position X="8" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
